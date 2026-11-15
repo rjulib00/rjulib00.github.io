@@ -3,3 +3,6 @@ Uso de Flex vs Grid:
 
 Breakpoints:
   Hay un breakpoint a los 800 pixeles, en este caso el menu lateral se deja de mostrar para dejar paso a el texto en su totalidad, y el menu superior pasa de ser opciones visibles a un menú hamburguesa con esas mismas opciones, se ha usado una checkbox para "trampear" su uso, sin necesidad de usar javascript, usando tan solo css y html
+
+
+link a el despliegue de la pagina: https://rjulib00.github.io/
