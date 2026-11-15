@@ -1,0 +1,112 @@
+/* Datos basicos en los contenedor principales de la pagina html */
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+	background-color: #84240C;
+	color: #E7CFB4;
+	text-align: center;
+	align-content: center;
+	font-weight: bold;
+	font-size: clamp(1.2rem, 4vw, 3.6rem);
+	/* Clamp es un basciamente (tamaño minimo, usa siempre que puedas, no pases de) vw=un porcentage en funcion de la resolucion || rem es el tamaño en funcion del tamaño de letra del padre, es decir, si header es 15px y rem es 30, significa que es un 30% de los 15px de el padre, es decir, 5px; por alguna razon, usando medidas de px no funciona, y siempre estan en el tamaño del "padre" */
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+	height: 75px;
+	z-index: 2000;
+}
+
+body{
+	padding-top: 75px; /* que mi header este "fuera" del body */
+	align-items: center;
+	background-image: url('../IMGs/madera.jpg');
+	background-size: auto;
+	padding-bottom: 75px; /* quiero que mi footer "este fuera del body, asi que cojo la altura del footer y la pongo como padding debajo del body*/
+}
+
+footer{
+	background-color: #84240C;
+	color: #E7CFB4;
+	text-align: right;
+	align-content: center;
+	font-weight: bold;
+	font-size: clamp(1.8rem, 4vw, 2.5rem);
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+	height: 75px;
+
+	padding-right: clamp(1%, 4vw, 2.5%);
+    box-sizing: border-box; /* meterlo en una caja para que pueda separarlo unpoco, en funcion del tamaño de la pantalla, en una de 1440p si no se veria muy a la dewrecha de mas */
+}
+/* Clases e IDs de los cosos de la pagina */
+.contenedor {
+	/* AQUI EDITAS EL COMO SE REPARTEN LOS LIBROS, esto es cada uno de las "celdas" del flex*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+	max-width: 80%;
+	margin: 1% auto;
+}
+
+.contenedor .libro{
+	/* AQUI EDITAS LOS PALABROS DE LOS LIBROS Y EL FONDO */
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+
+		color: goldenrod;
+		background-image: url('../IMGs/librillo.png');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-color: transparent;
+		
+		width: clamp(200px, 25vw, 250px);
+		aspect-ratio: 250 / 300;
+		margin: 50px;
+		font-size: clamp(1.5rem, 2vw, 2.4rem);
+	}
+
+.contenedor .libro::before{
+		content: ""; /* "creamos una caja invisible, */
+    	position: absolute; /* que se coloca ignorando a el propio libro, se coloca antes que este para que se dibuje detras */
+    	bottom: -13.5%; /*para que cuanto quiero que sobresalga por debajo*/
+    	width: 140%;
+    	height: 20%;
+
+    	background-image: url('../IMGs/Shelf.png');
+    	background-size: 100% 100%;
+    	background-repeat: no-repeat;
+		/*se pinta detras del libro*/
+    	z-index: -1;
+}
+
+.back-to-top {
+	/* donde se coloca */
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+    z-index: 1000; /* pa que este siempre encima de to */
+	/* como se "escribe" la flecha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	/*"tamaño de la caja*/
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid rgb(80, 80, 80); /* sin solid no se pinta */
+    background-color: gray;
+	/*le texto: la flecha*/
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+}

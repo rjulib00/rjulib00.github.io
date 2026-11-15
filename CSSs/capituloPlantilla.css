@@ -1,0 +1,197 @@
+body{
+    margin: 0;
+}
+/* encargado de hacer que la pagina este en un bloque con flex y poder separar en 4 sectores */
+.contenedor{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+/* Bloque superior, se encarga de las opciones, de documentacion y otras cosas */
+.superior{
+    background-color: #84240C;
+    color: #E7CFB4;
+    display: flex;
+    flex: 10;
+}
+/* bloque del logo, se encarga de poder darle la forma de donde va a estar colocado en su bloque */
+.logo{
+    display: flex;
+    flex: 10;
+}
+/* el "fondo" de la imagen y donde se va a cilocar respecto a el bloque del logo */
+.logo a{
+    background-color: rgb(255, 193, 140);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+/* cargar la imagen */
+.logo img{
+    height: auto;
+    /* jamas comprendere por que no puedo hacerlo con pixeles */
+    width: clamp(7rem, 20vw, 10rem);
+}
+/* el bloque de las opciones superior, es decir, documentacion, paginas externas.... */
+.opciones{
+    display: flex;
+    flex-direction: row;
+    flex: 90;
+    align-items: center;
+}
+/* las opciones en si mismas, el anterior se encarga de colocarlas */
+.enlaces{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+/* de cada opcion, las caracteristicas que tienen, para no "estropear" el bloque entero */
+.enlaces div{
+    flex: 1;
+    text-align: center;
+    font-size: clamp(0.8rem, 3vw, 3rem);
+}
+
+.enlaces div a:hover{
+    background-color: #E7CFB4;
+    color: #84240C;
+}
+/* esto e pa la burguer, solo existe, luego se cambia con el media al final, pero es el "texto" que al parecer ascii tiene un simbolo para el, asi que no necesito de imagen/es*/
+.opciones input, .opciones label{
+    display: none;
+}
+
+/* el bloque donde va a estar el texto del tema como tal y las anclas (marcapaginas) de cada apartado */
+/*Como en superior, pero para el bloque */
+.inferior{
+    display: flex;
+    flex: 85;
+    min-height: 0;
+}
+/*el menu de la izquierda, donde estan las anclas */
+.marcador{
+    background-color: #84240C;
+    color: #E7CFB4;
+    display: flex;
+    flex-direction: column;
+    flex:10;
+}
+/* como en el anterior, cada "ancla/opcion" tiene sus propios datos */
+.marcador div{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.8rem, 2.5vw, 3rem);
+}
+
+/* el libro grande de petete, con sus apartados y toda la pesca */
+.texto{
+    background-image: url("../IMGs/papel.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    flex: 90;
+    font-size: clamp(1.2rem, 2vw, 2.5rem);
+    overflow-y: auto;
+    padding: 2.5% 2.5% 13% 2.5%;
+    box-sizing: border-box;
+}
+/*esto es solo para hacer, que TODO lo que haya en el texto, este justificado, que este como "en un cuadrado" con espacios entre las palabras especificos, vamos lo que es el "justificar" del word, en vez de el centrar */
+.texto *{
+    text-align: justify;
+}
+/* boton de volver arriba, seguramente haya una mejor opcion, tal y como esta me funciona y acepto pulpo como animal de compañia */
+.back-to-top {
+	/* donde se coloca */
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    z-index: 1000; /* pa que este siempre encima de to */
+	/* como se "escribe" la flecha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	/*"tamaño de la caja*/
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid rgb(80, 80, 80); /* sin solid no se pinta */
+    background-color: gray;
+	/*le texto: la flecha*/
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    /* por alguna razon que desconozco, el <a> va subrayado; A ver si, por que es un hyper vinculo, pero eso, para quitarle el subrayado*/
+    text-decoration: none;
+}
+/* wonky menu burguer, que aparece cuando es menos de 800px de ancho (la ventana)*/
+@media (width <= 800px){
+    /* actualizar opciones para poder poner el simbolo a la derecha, si no esta a la izquierda, y eos no funciona asin */
+    .opciones{
+        position: relative;
+        justify-content: flex-end;
+    }
+    /* lo mismo en que otros lados, adaptar el tamaño para que se adapte un poco a la resolucion */
+    .opciones label{
+        display: block;
+        font-size: clamp(2rem, 5vw, 5rem);
+        /* MIRA MI RATON FLECHA AHORA ES UN DEDACO! (tiene mas opciones, la idea es que sea una mano, como si fuese un boton*/
+        cursor: pointer;
+        margin-right: 7%;
+    }
+
+    /* para que las opciones de arriba, no se muestren en el menu superior, si no en un menu hover */
+    .enlaces{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        background-color: #84240C;
+        width: 200px;
+
+    }
+    /*tamaño del texto*/
+    .enlaces div{
+        font-size: clamp(1.5rem, 3vw, 3rem);
+        padding: 15px;
+    }
+    /* cuando haces click en el checkbox se abre el menu o se cierra */
+    #menu:checked ~ .enlaces{
+        display:flex;
+        flex-direction: column;
+    }
+
+    /* no quiero que el apartado de la izquierda se muestre cuando es menos de x tamaño, quita mucho espacio y queda algo feo */
+    .marcador{
+        display: none;
+    }
+}
+/* quitamos toda la parafernalia de los <a>, es decir, que no tengan ni hover, ni visitaod, ni sin visitar... que todos los de las anclas y las opciones, sean como un texto normal mas */
+.marcador a, .enlaces a{
+    color: #E7CFB4;
+    text-decoration: none;
+
+}
+/* como firefox no soporta el "scroll-target-group" del ""scroll-spy" se usa javascript para poder relizar la configuracion, en la documentacion existe una pagina que lo demuestra como seria usando solo esas propiedades */
+/* para cuando nosotros nos ponemos por encima */
+.marcador a:hover{
+    background-color: rgb(53, 101, 173);
+    color: #E7CFB4;
+}
+/* la clase activo se la ponemos con el javascript con el: parentElement.classlist.add */
+.marcador div.activo{
+    background-image: url("../IMGs/MarcapaginasAzul.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+/* de marcadores, cuando un div esta "activo" su <a> */
+.marcador div.activo a{
+    color: #E7CFB4;
+}

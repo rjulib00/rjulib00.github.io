@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../../CSSs/capitulos.css">
+	<title>Capitulo 1</title>
+	
+</head>
+<body>
+	<div class="contenedor">
+		<div class="superior">
+			<div class="logo">
+				<a href="../../index.html">
+					<img src="../../../IMGs/logo.png"/>
+				</a>
+			</div>
+			<div class="opciones">
+				<input type="checkbox" id="menu">
+				<label for="menu">☰</label>
+
+				<div class="enlaces">
+					<div id="opcion2"><a href="Capitulo2.html">Capitulo 2</a></div>
+					<div id="opcion3"><a href="Practicas.html">Practicas</a></div>
+					<div id="opcion4"><a href="Herramientas.html">Herramientas</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="inferior">
+			<div class="marcador">
+				<div id="ancla1"><a href="#parte1">Introduccion</a></div>
+				<div id="ancla2"><a href="#parte2">Estilos</a></div>
+				<div id="ancla3"><a href="#parte3">Elementos y Pseudo</a></div>
+				<div id="ancla4"><a href="#parte4">Vinculación</a></div>
+				<div id="ancla6"><a href="#parte6">Tools & Tests</a></div>
+				<div id="ancla7"><a href="#parte7">Techs & Frameworks</a></div>
+				<div id="ancla8"><a href="#parte8">Preprocesadores</a></div>
+				<div id="ancla9"><a href="#parte9">PDF</a></div>
+			</div>
+			<div class="texto" id="texto">
+				<h3>-Esta parte ha sido pasada por la AI para convertir el PDF a texto-</h3>
+				<h1>Elementos del diseño: percepción visual</h1>
+				<p>
+					<h1 id="parte1">1. Introducción</h1>
+<p>El uso de estilos en el desarrollo web es fundamental para separar la estructura del contenido (HTML) de la presentación visual (CSS). Esta unidad está dedicada a compren- der cómo los estilos permiten transformar páginas web simples en interfaces atractivas, accesibles y profesionales. Aprenderás a aplicar estilos de diferentes formas, a organizar y reutilizar reglas CSS, y a utilizar herramientas modernas que facilitan el trabajo con hojas de estilo. Además, se abordarán conceptos clave como la especificidad, la cascada y las mejo- res prácticas para mantener el cádigo limpio y escalable. También conocerás tecnologías y frameworks actuales, así como preprocesadores que potencian el desarrollo de estilos avanzados. Al finalizar la unidad, serás capaz de crear, vincular y optimizar hojas de estilo para cualquier proyecto web.</p>
+<h1 id="parte2">2. Estilos en línea basados en etiquetas y en clases</h1>
+<p>Los estilos CSS pueden aplicarse de diferentes formas en un documento HTML. En esta seccióin exploraremos las tres principales metodologías para aplicar estilos: estilos en línea, estilos basados en etiquetas y estilos basados en clases. Los estilos en línea se aplican directamente a un elemento HTML utilizando el atributo style. Esta es la forma más específica de aplicar CSS y tiene la mayor prioridad en la cascada de estilos.</p>
+<h3>2.1. Estilos basados en línea (Inline Styles)</h3>
+<pre><code>&lt;elemento style=&quot;propiedad: valor; propiedad2: valor2;&quot;&gt;</code></pre>
+<p>Contenido del elemento</p>
+<pre><code>&lt;/elemento&gt;</code></pre>
+<p>Ejemplo práctico:</p>
+<pre><code>&lt;h1 style=&quot;color: red; font-size: 24px; text-align: center;&quot;&gt;</code></pre>
+<p>Título Principal</p>
+<pre><code>&lt;/h1&gt;
+&lt;p style=&quot;background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc;&quot;&gt;</code></pre>
+<p>Este párrafo tiene estilos aplicados en línea.</p>
+<pre><code>&lt;/p&gt;
+Importante: Los estilos en línea deben usarse con moderación y principal-</code></pre>
+<p>mente para casos específicos o pruebas temporales, ya que van en contra de las mejores prácticas de separación de contenido y presentación.</p>
+<h3>2.2. Estilos basados en etiquetas (Tag Selectors)</h3>
+<p>Los estilos basados en etiquetas se aplican a todos los elementos de un tipo específico en el documento HTML. Se definen utilizando el nombre de la etiqueta como selector. Sintaxis y aplicación</p>
+<pre><code>&lt;style&gt;
+etiqueta {
+propiedad: valor;
+propiedad2: valor2;
+}
+&lt;/style&gt;</code></pre>
+<p>Ejemplos prácticos:</p>
+<pre><code>&lt;style&gt;
+h1 {
+color: navy;
+font-family: Arial, sans-serif;
+text-align: center;
+}
+p {
+line-height: 1.6;
+margin-bottom: 15px;
+text-align: justify;
+}
+img {
+max-width: 100%;
+height: auto;
+border-radius: 5px;
+}
+&lt;/style&gt;</code></pre>
+<p>Características principales Aplica estilos a todas las instancias de una etiqueta Útil para establecer estilos base o por defecto Menor especificidad que los estilos en línea Facilita la consistencia visual del documento</p>
+<h3>2.3. Estilos basados en clases (Class Selectors)</h3>
+<p>Los estilos basados en clases permiten aplicar estilos específicos a elementos que com- parten una clase determinada. Son la forma más flexible y reutilizable de aplicar CSS. Sintaxis e implementación</p>
+<pre><code>&lt;style&gt;
+.nombre-clase {
+propiedad: valor;
+propiedad2: valor2;
+}
+&lt;/style&gt;
+&lt;elemento class=&quot;nombre-clase&quot;&gt;Contenido&lt;/elemento&gt;</code></pre>
+<p>Ejemplos prácticos:</p>
+<pre><code>&lt;style&gt;
+.destacado {
+background-color: #ffffcc;
+border-left: 4px solid #ffeb3b;
+padding: 10px;
+margin: 15px 0;
+}
+.boton {
+background-color: #007bff;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}</code></pre>
+<p>.boton:hover {</p>
+<pre><code>background-color: #0056b3;
+}
+.texto-grande {
+font-size: 1.2em;
+font-weight: bold;
+}
+&lt;/style&gt;</code></pre>
+<p>Aplicación en HTML:</p>
+<pre><code>&lt;p class=&quot;destacado&quot;&gt;Este párrafo está destacado&lt;/p&gt;
+&lt;button class=&quot;boton&quot;&gt;Enviar&lt;/button&gt;
+&lt;span class=&quot;texto-grande&quot;&gt;Texto importante&lt;/span&gt;</code></pre>
+<p>Múltiples clases Es posible aplicar múltiples clases a un mismo elemento:</p>
+<pre><code>&lt;p class=&quot;destacado texto-grande&quot;&gt;</code></pre>
+<p>Párrafo con múltiples clases aplicadas</p>
+<pre><code>&lt;/p&gt;</code></pre>
+<h3>2.4. Estilos basados en ID (ID Selectors)</h3>
+<p>El selector de ID permite aplicar estilos a un único elemento identificado de forma única en el documento HTML. Se utiliza el carácter # seguido del nombre del ID.</p>
+<h3>Sintaxis y uso</h3>
+<pre><code>&lt;style&gt;
+#nombre-id {
+propiedad: valor;
+propiedad2: valor2;
+}
+&lt;/style&gt;
+&lt;elemento id=&quot;nombre-id&quot;&gt;Contenido&lt;/elemento&gt;</code></pre>
+<p>Ejemplo práctico:</p>
+<pre><code>&lt;style&gt;
+#aviso {
+background-color: #ffe0e0;
+color: #b71c1c;
+padding: 10px;
+border: 2px solid #b71c1c;
+border-radius: 4px;
+font-weight: bold;
+text-align: center;
+}
+&lt;/style&gt;
+&lt;div id=&quot;aviso&quot;&gt;¡Atención! Este mensaje es importante.&lt;/div&gt;</code></pre>
+<p>Características principales: El ID debe ser único en todo el documento. Tiene mayor especificidad que las clases y etiquetas. útil para destacar o personalizar elementos concretos. No se recomienda para estilos reutilizables.</p>
+<h3>2.5. Tipos de elementos: Bloque y en línea</h3>
+<p>En HTML y CSS, los elementos se clasifican principalmente en dos tipos según su comportamiento en el flujo del documento: **elementos de bloque** y **elementos en línea**.</p>
+<h3>Elementos de bloque</h3>
+<p>Los elementos de bloque (block) ocupan todo el ancho disponible de su contenedor y siempre comienzan en una nueva línea. Son ideales para estructurar la página y crear secciones. Ejemplos comunes: &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;form&gt;</p>
+<pre><code>&lt;div&gt;Este es un elemento de bloque&lt;/div&gt;
+&lt;p&gt;Otro bloque de texto&lt;/p&gt;</code></pre>
+<p>Características: Ocupan todo el ancho disponible. Generan un salto de línea antes y después. Se pueden aplicar propiedades de tamaño (width, height), márgenes y relleno. Elementos en línea Los elementos en línea (inline) sólo ocupan el espacio necesario para su contenido y no generan saltos de línea. Se utilizan para modificar partes de texto o agrupar pequeños fragmentos. Ejemplos comunes: &lt;span&gt;, &lt;a&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;img&gt;</p>
+<pre><code>&lt;p&gt;Texto con &lt;span style=&quot;color: red;&quot;&gt;palabra en rojo&lt;/span&gt; y &lt;a href=&quot;#&quot;&gt;enlace&lt;/a&gt;</code></pre>
+<p>Características: Sólo ocupan el espacio de su contenido. No generan saltos de línea. No admiten propiedades de tamaño (width, height) por defecto. Se pueden anidar dentro de elementos de bloque.</p>
+<h3>Propiedad display</h3>
+<p>La propiedad CSS display permite cambiar el tipo de comportamiento de un elemen- to:</p>
+<pre><code>.bloque {
+display: block;
+}
+.enlinea {
+display: inline;
+}
+.enlinea-bloque {
+display: inline-block;
+}</code></pre>
+<p>Ejemplo:</p>
+<pre><code>&lt;span style=&quot;display: block; background: #e3f2fd;&quot;&gt;Ahora soy un bloque&lt;/span&gt;
+Nota: El valor inline-block combina características de ambos tipos: se</code></pre>
+<p>comporta como en línea pero permite definir tamaño y márgenes. Lee más: La propiedad display en CSS</p>
+<h3>2.6. Modelo de cajas (Box Model)</h3>
+<p>El Modelo de cajas es el principio fundamental que define cómo se renderizan y ocupan espacio los elementos en CSS. Cada elemento se representa como una caja compuesta por: Contenido (content): El área donde se muestra el texto o imagen. Relleno (padding): Espacio entre el contenido y el borde. Borde (border): El marco que rodea el padding y el contenido. Margen (margin): Espacio exterior entre el borde y otros elementos. margen borde padding contenido Ejemplo:</p>
+<pre><code>.caja {
+width: 200px;
+padding: 20px;
+border: 4px solid #007bff;
+margin: 30px;
+background: #e3f2fd;
+}</code></pre>
+<p>Lee Modelo de cajas Propiedad box-sizing: Por defecto, el ancho y alto sólo incluyen el área de contenido. Si quieres que incluyan padding y borde, usa:</p>
+<pre><code>.caja {
+box-sizing: border-box;
+}</code></pre>
+<p>Esto facilita la maquetación y evita desbordamientos inesperados. Lee Modelo de box-sizing</p>
+<h3>2.7. Jerarquía y especificidad</h3>
+<p>La especificidad en CSS determina qué estilos se aplican cuando hay conflictos. El orden de prioridad es:</p>
+<h1 id="parte3">4. Elementos y pseudo-elementos (especificidad: 1)</h1>
+<p>¿Qué es la especificidad? La especificidad es un sistema de puntuación que utiliza CSS para decidir qué regla se aplica si varias coinciden sobre el mismo elemento. Cada selector suma puntos según su tipo: Estilos en línea: 1 punto en la columna de los miles (1000) Selectores de ID: 1 punto en la columna de las centenas (100) Clases, atributos y pseudo-clases: 1 punto en la columna de las decenas (10) Elementos y pseudo-elementos: 1 punto en la columna de las unidades (1) ¿Por qué se usan estos números? ¿Qué significa “en binario”? No es realmente binario, sino una notación de “cuatro columnas” (miles, centenas, decenas, unidades) para comparar fácilmente la importancia de cada selector. Por ejemplo: Un selector de ID suma 100 (#menu →0-1-0-0) Una clase suma 10 (.rojo 0-0-1-0) Un elemento suma 1 (p 0-0-0-1) Un estilo en línea suma 1000 (style=&quot;...&quot; 1-0-0-0) Cuando hay conflicto, CSS compara de izquierda a derecha: el número más alto en la columna más significativa gana. Ejemplo de comparación:</p>
+<pre><code>p { color: blue; } /* 0-0-0-1 */
+.texto { color: green; } /* 0-0-1-0 */
+#especial { color: red; } /* 0-1-0-0 */</code></pre>
+<p>Si un elemento tiene los tres selectores, el color será rojo porque el ID tiene mayor especificidad.</p>
+<p>Si dos reglas tienen la misma especificidad, gana la que aparece más abajo en el CSS.</p>
+<h3>Ejemplo de especificidad:</h3>
+<pre><code>&lt;style&gt;
+p { color: blue; } /* Especificidad: 1 */
+.texto { color: green; } /* Especificidad: 10 */
+#especial { color: red; } /* Especificidad: 100 */
+&lt;/style&gt;
+&lt;p class=&quot;texto&quot; id=&quot;especial&quot; style=&quot;color: purple;&quot;&gt;</code></pre>
+<p>Este texto será púrpura (estilo en línea gana)</p>
+<pre><code>&lt;/p&gt;</code></pre>
+<h3>2.8. Mejores prácticas</h3>
+<p>Evitar estilos en línea para el código de producción Usar clases para estilos reutilizables Aplicar estilos a etiquetas para estilos base globales Mantener la especificidad baja para facilitar el mantenimiento Separar presentación de contenido utilizando archivos CSS externos</p>
+<p>Los estilos basados en clases son fundamentales para crear interfaces web mantenibles y escalables. Permiten la reutilización de código y facilitan la implementación de sistemas de diseño coherentes.</p>
+<h3>2.9. Lenguaje CSS</h3>
+<p>W3Schools CSS Tabla resumen CSS Lenguaje CSS CSS nivel intermedio</p>
+<h1 id="parte4">3. Crear y vincular hojas de estilo en cascada externa</h1>
+<p>Las hojas de estilo en cascada externas (CSS externo) son la forma más profesional y escalable de aplicar estilos a una web. Permiten separar completamente el contenido (HTML) de la presentación (CSS), facilitando el mantenimiento, la reutilización y la colaboración en proyectos grandes. ¿Cómo crear una hoja de estilo externa?</p>
+<h3 >1. Crea un archivo con extensión '.css', por ejemplo: 'estilos.css'.</h3>
+<p>CSS en ese archivo:</p>
+<pre><code>body {
+background-color: #f9f9f9;
+color: #222;
+}
+h1 {
+color: #0056b3;
+text-align: center;
+}
+.boton {
+background: #007bff;
+color: white;
+border: none;
+border-radius: 4px;
+padding: 10px 20px;
+}</code></pre>
+<p>¿Cómo vincular la hoja de estilo externa al HTML? Coloca la siguiente línea dentro de la etiqueta &lt;head&gt; de tu documento HTML:</p>
+<pre><code>&lt;head&gt;</code></pre>
+<p>...</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt;</code></pre>
+<p>...</p>
+<pre><code>&lt;/head&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt;</code></pre>
+<p>Notas importantes: Puedes vincular varias hojas externas (se aplican en orden de aparición). El navegador descarga y aplica el CSS automáticamente. Si usas rutas relativas, asegúrate de que el archivo CSS esté en la ubicación correcta respecto al HTML.</p>
+<h3>Ventajas del CSS externo</h3>
+<p>Permite reutilizar estilos en muchas páginas. Facilita el trabajo en equipo (diseñadores y desarrolladores pueden editar CSS sin tocar el HTML). Mejora la velocidad de carga (el CSS se cachea en el navegador). Hace el código más limpio y profesional. Buenas prácticas Usa nombres descriptivos para los archivos CSS ('main.css', 'colores.css', etc.). Agrupa reglas relacionadas y comenta las secciones del CSS. Mantén la coherencia en la indentación y el formato. No dupliques reglas en diferentes archivos. Si tienes muchos estilos, divide en varios CSS por funcionalidad (por ejemplo: 'la- yout.css', 'typography.css'). Ejemplo:</p>
+<pre><code>&lt;!-- index.html --&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Ejemplo CSS externo&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Bienvenido&lt;/h1&gt;
+&lt;button class=&quot;boton&quot;&gt;Haz clic&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+/* estilos.css */
+h1 {
+color: #0056b3;
+font-family: Arial, sans-serif;
+}
+.boton {
+background: #007bff;
+color: white;
+border: none;
+border-radius: 4px;
+padding: 10px 20px;
+cursor: pointer;
+}</code></pre>
+<p>.boton:hover {</p>
+<pre><code>background: #0056b3;
+}</code></pre>
+<p>La cascada y la herencia en CSS La cascada y la herencia son dos conceptos fundamentales en CSS que determinan cómo se aplican los estilos a los elementos de una página web.</p>
+<h3>Cascada</h3>
+<p>La cascada se refiere al orden en que se aplican las reglas CSS. Cuando hay múltiples reglas que podrían aplicarse a un elemento, el navegador utiliza un conjunto de reglas para determinar cuál se aplica. Este orden se basa en tres factores:</p>
+<pre><code>Especificidad: Las reglas más específicas tienen prioridad sobre las menos específi-</code></pre>
+<p>cas. Por ejemplo, un selector de ID (#miElemento) es más específico que un selector de clase (.miClase). Orden de aparición: Si dos reglas tienen la misma especificidad, se aplica la que aparece más tarde en el CSS.</p>
+<pre><code>Importancia: Las reglas marcadas como !important tienen la máxima prioridad,</code></pre>
+<p>pero su uso debe ser evitado en la medida de lo posible. Los navegadores otorgan un peso distinto a las hojas de estilo que, ordenadas de menor a mayor peso, son Estilos por defecto del navegador Hojas de estilo externas importadas (empleando el elemento @import dentro del elemento style en la cabecera del documento). Hojas de estilo internas (dentro de &lt;style&gt;). Estilos en línea (atributo style en el HTML). Declaraciones de estilo marcadas como !important. Además de este orden, existe otra jerarquía de pesos que se aplican a las hojas de estilo creadas por la persona que ha diseñado la página web. Es importante entender esta jerar- quía y tener en cuenta que las reglas de estilo que están al final de la lista sobreescribiran a las primeras. La siguiente lista, que como la anterior está ordenada de menor a mayor peso, muestra esta otra jerarquía: Hojas de estilo externas vinculadas (empleando el elemento link en la cabecera del documento). Hojas de estilo externas importadas (empleando el elemento @import dentro del elemento style en la cabecera del documento). Hojas de estilo incrustadas (empleando el elemento style en la cabecera del docu- mento). Estilos en línea (empleando el atributo style en la etiqueta del elemento). Declaraciones de estilo marcadas como !important.</p>
+<h3>Herencia</h3>
+<p>La herencia permite que ciertos estilos se apliquen a los elementos secundarios de un elemento padre. Por ejemplo, si se establece un color de texto en un elemento &lt;body&gt;, todos los elementos de texto dentro de &lt;body&gt; heredarán ese color, a menos que se espe- cifique lo contrario. No todas las propiedades CSS son heredables. Las propiedades de texto, como color y font-family, son heredables, mientras que propiedades como margin y padding no lo son.</p>
+<h1 id="parte6">4. Herramientas y test de verificación</h1>
+<p>Para garantizar la calidad y el correcto funcionamiento de las hojas de estilo, existen numerosas herramientas y tests de verificación. Estas permiten detectar errores, mejorar la accesibilidad, optimizar el rendimiento y asegurar el cumplimiento de estándares.</p>
+<h3>Validadores de CSS</h3>
+<p>W3C CSS Validator: Herramienta oficial para comprobar la sintaxis y compati- bilidad de las hojas de estilo. Disponible en:</p>
+<pre><code>https://jigsaw.w3.org/css-validator/
+CSSLint: Analiza el código CSS y sugiere mejoras de calidad y buenas prácticas.
+https://csslint.net/</code></pre>
+<p>Herramientas de inspección y depuración DevTools de navegador: Todos los navegadores modernos (Chrome, Firefox, Ed- ge, Safari) incluyen herramientas para inspeccionar, modificar y depurar CSS en tiempo real. Extensiones útiles: Ejemplo: ”Web Developer”(disponible para Chrome y Firefox) añade utilidades para analizar estilos, estructuras y accesibilidad.</p>
+<h3>Test de compatibilidad y responsive</h3>
+<pre><code>Responsinator: Permite ver cómo se visualiza una web en diferentes dispositivos.
+https://www.responsinator.com/</code></pre>
+<p>BrowserStack / Sauce Labs: Plataformas para probar el sitio en múltiples na- vegadores y sistemas operativos reales. Accesibilidad y buenas prácticas</p>
+<pre><code>WAVE: Analiza la accesibilidad de la web y detecta problemas visuales y estruc-</code></pre>
+<p>turales.</p>
+<pre><code>https://wave.webaim.org/
+Lighthouse: Herramienta de Google integrada en Chrome DevTools para auditar</code></pre>
+<p>accesibilidad, rendimiento y buenas prácticas.</p>
+<h3>Recomendaciones</h3>
+<p>Valida siempre tu CSS antes de publicar. Usa DevTools para depurar y experimentar con estilos. Comprueba la visualización en varios dispositivos y navegadores. Prioriza la accesibilidad y el rendimiento. Documenta los cambios y utiliza comentarios en el CSS. Lee más: HerramientasTestVerificacionEniun InspeccionarElementosEniun</p>
+<h1 id="parte7">5. Tecnologías y frameworks</h1>
+<p>El desarrollo moderno de interfaces web se apoya en tecnologías y frameworks que faci- litan la creación de estilos avanzados, responsivos y mantenibles. Estos recursos permiten ahorrar tiempo, aplicar buenas prácticas y lograr resultados profesionales.</p>
+<h3>5.1. Tecnologías de diseño</h3>
+<h3>Media Queries</h3>
+<p>Las Media Queries son una característica fundamental de CSS que permiten adaptar el diseño de una web a diferentes dispositivos, tamaños de pantalla y condiciones del entorno. Son la base del diseño responsive, haciendo posible que una misma página se vea correctamente en móviles, tablets y ordenadores. Sintaxis básica Las Media Queries se definen usando la regla @media seguida de una condición. Dentro de la media query se colocan las reglas CSS que solo se aplicarán si se cumple la condición.</p>
+<pre><code>@media (condición) {
+/* Reglas CSS */
+}
+Ejemplo: Cambiar el color de fondo en pantallas pequeñas
+body {
+background: #fff;
+}
+@media (max-width: 600px) {
+body {
+background: #e3f2fd;
+}
+}</code></pre>
+<p>Condiciones más habituales</p>
+<pre><code>max-width: Aplica estilos si el ancho de la pantalla es menor o igual al valor indicado.
+min-width: Aplica estilos si el ancho de la pantalla es mayor o igual al valor indicado.
+orientation: Permite detectar si el dispositivo está en modo vertical (portrait)</code></pre>
+<p>u horizontal (landscape).</p>
+<pre><code>print: Aplica estilos solo cuando se imprime la página.
+Ejemplo: Diseño responsive de columnas
+.contenedor {
+display: flex;
+flex-direction: row;
+}
+@media (max-width: 800px) {
+.contenedor {
+flex-direction: column;
+}
+}</code></pre>
+<p>Buenas prácticas Utiliza min-width para el enfoque ”mobile first”. Agrupa las media queries al final del archivo CSS para facilitar el mantenimiento. Prueba el diseño en varios dispositivos y resoluciones. Usa unidades relativas (em, rem, %) para mayor flexibilidad. Lee más: Media Queries en Eniun Guía sobre Media Queries en CSS</p>
+<h3>Flexbox</h3>
+<p>Flexbox (Flexible Box Layout) es un módulo de CSS que facilita la distribución de espacio y la alineación de elementos en un contenedor, incluso cuando su tamaño es desconocido o dinámico. Ejemplo básico:</p>
+<pre><code>&lt;style&gt;
+.contenedor {
+display: flex;
+gap: 10px;
+}
+.item {
+background: #e3e3e3;
+padding: 20px;
+flex: 1;
+}
+&lt;/style&gt;
+&lt;div class=&quot;contenedor&quot;&gt;
+&lt;div class=&quot;item&quot;&gt;1&lt;/div&gt;
+&lt;div class=&quot;item&quot;&gt;2&lt;/div&gt;
+&lt;div class=&quot;item&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>Permite alineación horizontal, vertical, ordenación y distribución de espacio de forma sencilla. Ideal para menús, barras de navegación y layouts simples.</p>
+<p>Flexbox en Eniun Guía de introducción a Flexbox</p>
+<h3>Grid Layout</h3>
+<p>Grid Layout es un sistema de maquetación bidimensional que permite crear diseños complejos de filas y columnas de forma sencilla y controlada. Ejemplo básico:</p>
+<pre><code>&lt;style&gt;
+.grid {
+display: grid;
+grid-template-columns: 1fr 2fr 1fr;
+gap: 10px;
+}
+.celda {
+background: #cce5ff;
+padding: 20px;
+}
+&lt;/style&gt;
+&lt;div class=&quot;grid&quot;&gt;
+&lt;div class=&quot;celda&quot;&gt;A&lt;/div&gt;
+&lt;div class=&quot;celda&quot;&gt;B&lt;/div&gt;
+&lt;div class=&quot;celda&quot;&gt;C&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>Permite crear layouts responsivos, dashboards y estructuras complejas sin necesidad de floats ni hacks. Grid y Flexbox pueden combinarse para lograr resultados avanzados.</p>
+<p>Grid Layout en Eniun Guía de introducción a Grid Layout</p>
+<h3>5.2. Frameworks CSS más populares</h3>
+<pre><code>Bootstrap: El framework CSS más usado. Proporciona un sistema de rejilla (grid),</code></pre>
+<p>componentes listos para usar (botones, menús, formularios) y utilidades para diseño responsive.</p>
+<pre><code>https://www.eniun.com/tutorial-bootstrap-5/
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+Materialize: Basado en las directrices de diseño de Google Material Design. Ofrece</code></pre>
+<p>componentes modernos y animaciones.</p>
+<pre><code>https://materializecss.com/</code></pre>
+<p>Tailwind CSS: Framework de utilidades. Permite aplicar estilos directamente en las clases del HTML, favoreciendo la personalización y la rapidez.</p>
+<pre><code>https://tailwindcss.com/
+Bulma: Basado en Flexbox, sencillo y modular.
+https://bulma.io/
+Foundation: Alternativa avanzada a Bootstrap, con herramientas para accesibili-</code></pre>
+<p>dad y prototipado rápido.</p>
+<pre><code>https://get.foundation/</code></pre>
+<p>Ventajas de usar frameworks Aceleran el desarrollo y reducen errores. Garantizan compatibilidad entre navegadores. Incluyen componentes accesibles y responsivos. Fomentan la coherencia visual en todo el proyecto. Permiten personalización mediante variables y temas. Otras tecnologías y utilidades Normalize.css: Restablece los estilos por defecto de los navegadores para evitar inconsistencias.</p>
+<pre><code>https://necolas.github.io/normalize.css/</code></pre>
+<p>Animate.css: Biblioteca de animaciones CSS listas para usar.</p>
+<pre><code>https://animate.style/
+Iconos: Font Awesome, Material Icons, Bootstrap Icons, etc.</code></pre>
+<h3>Ejemplo de uso: Bootstrap</h3>
+<pre><code>&lt;!-- Enlazar Bootstrap desde CDN --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/boo
+&lt;!-- Botón con clases Bootstrap --&gt;
+&lt;button class=&quot;btn btn-primary&quot;&gt;Guardar&lt;/button&gt;</code></pre>
+<h3>Recomendaciones</h3>
+<p>Lee la documentación oficial de cada framework antes de usarlo. Personaliza solo lo necesario para no perder la coherencia. No abuses de los frameworks: aprende CSS ”puro”para entender lo que ocurre detrás. Mantén los frameworks actualizados para evitar vulnerabilidades.</p>
+<h1 id="parte8">6. Preprocesadores de estilos. Variables, mixins y funciones</h1>
+<p>Los preprocesadores de estilos son herramientas que amplían las capacidades de CSS, permitiendo usar variables, funciones, anidamiento, mixins y otras utilidades avanzadas. El código se escribe en un lenguaje especial (como SASS, SCSS o LESS) y luego se compila a CSS estándar.</p>
+<h3>Ventajas de los preprocesadores</h3>
+<p>Permiten reutilizar código y evitar repeticiones. Facilitan la organización y el mantenimiento de proyectos grandes. Añaden lógica (condicionales, bucles) y estructuras avanzadas. Mejoran la legibilidad y escalabilidad del CSS.</p>
+<h3>Principales preprocesadores</h3>
+<p>SASS/SCSS: El más popular, con sintaxis flexible y gran comunidad.</p>
+<pre><code>https://sass-lang.com/
+LESS: Muy usado en proyectos legacy y compatible con variables y mixins.
+https://lesscss.org/
+Stylus: Sintaxis muy concisa y flexible.
+https://stylus-lang.com/</code></pre>
+<h3>Variables</h3>
+<p>Permiten definir valores reutilizables para colores, tamaños, fuentes, etc.</p>
+<pre><code>$color-principal: #007bff;
+body {
+color: $color-principal;
+}</code></pre>
+<h3>Mixins</h3>
+<p>Son bloques de código reutilizables que se pueden incluir en varias reglas.</p>
+<pre><code>@mixin redondeado($radio) {
+border-radius: $radio;
+box-shadow: 0 2px 4px #ccc;
+}
+.boton {
+@include redondeado(8px);
+}</code></pre>
+<h3>Funciones</h3>
+<p>Permiten realizar operaciones y devolver valores, por ejemplo para manipular colores.</p>
+<pre><code>.alerta {
+background: lighten($color-principal, 20%);
+}</code></pre>
+<h3>Ejemplo completo (SCSS)</h3>
+<pre><code>$color-fondo: #f8f9fa;
+$color-boton: #007bff;
+@mixin sombra {
+box-shadow: 0 2px 8px #bbb;
+}
+body {
+background: $color-fondo;
+}
+.boton {
+background: $color-boton;
+color: white;
+@include sombra;
+border-radius: 6px;
+}</code></pre>
+<p>¿Cómo se usan en un proyecto? Escribe el código en archivos '.scss', '.sass' o '.less'. Usa una herramienta (Node.js, extensiones de editor, scripts) para compilar a CSS estándar. Enlaza el CSS generado en tu HTML como siempre. Recomendación: Aunque los preprocesadores son muy potentes, es importante co- nocer bien CSS puro antes de usarlos en profundidad.</p>
+					<a id="parte9" href="../../../extends/Unidad2.pdf">Documento PDF</a></h3>
+			</div>
+		</div>
+	</div>
+	<a href="#parte1" class="back-to-top">↑</a>
+	<script src="../../../JavaScript/barra.js"></script>
+</body>
+</html>
